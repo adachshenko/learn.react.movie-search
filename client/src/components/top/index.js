@@ -1,6 +1,6 @@
 import React from 'react';
-import "index.scss";
+import "./styles.scss";
 
-const Top = () => <div id="triangle-up"></div>
+const Top = () => <div className="triangle">F</div>
 
 export default Top;

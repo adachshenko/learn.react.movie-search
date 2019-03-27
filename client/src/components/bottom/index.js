@@ -1,6 +1,6 @@
 import React from 'react';
-import "index.scss";
+import "./styles.scss";
 
-const Bottom = React.createElement('div', {id: "trapezoid-2"});
+const Bottom = React.createElement('div', {className: "trapezoid-2"}, 'E');
 
 export default Bottom;

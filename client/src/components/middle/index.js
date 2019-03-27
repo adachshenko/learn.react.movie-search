@@ -1,9 +1,9 @@
 import React from 'react';
-import "index.scss";
+import "./styles.scss";
 
 class Middle extends React.PureComponent {
     render() {
-        return <div id="trapezoid-1"></div>
+        return <div className="trapezoid-1">C</div>
     }
 }
 

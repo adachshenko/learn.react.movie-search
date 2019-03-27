@@ -7,11 +7,12 @@ const Visualizer = require('webpack-visualizer-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const getBaseConfig = env => ({
-  entry: path.join(__dirname, 'src', 'index.js'),
+  //If we don't specify entry and output webpack takes default values. It is an example configuration below
+  /*entry: path.join(__dirname, 'src', 'index.js'),
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'main.bundle.js'
-  },
+    path: path.join(__dirname, 'build'),
+    filename: '[name].bundle.js'
+  },*/
   mode: (env && env.NODE_ENV) || 'development',
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules']

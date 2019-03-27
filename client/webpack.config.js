@@ -17,7 +17,8 @@ const getBaseConfig = env => ({
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'src')
+    contentBase: path.join(__dirname, 'src'),
+    port: 3000
   },
   module: {
     rules: [

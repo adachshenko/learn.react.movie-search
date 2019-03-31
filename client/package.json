@@ -11,6 +11,7 @@
   "author": "Darya Adachshenko <adachshenko@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^6.0.1",

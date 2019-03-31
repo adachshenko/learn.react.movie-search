@@ -4,15 +4,19 @@ import ReactDOM from 'react-dom';
 import Top from './components/top';
 import Middle from './components/middle';
 import Bottom from './components/bottom';
+import SearchPage from './containers/SearchPage';
+import Footer from './shared/components/Footer';
 
 import "styles.scss";
 
 const App = () => {
   return (
     <div>
-      <Top />
+      {/* <Top />
       <Middle />
-      {Bottom}
+      {Bottom} */}
+      <SearchPage />
+      <Footer />
     </div>
   );
 };

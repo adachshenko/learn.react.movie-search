@@ -1,4 +1,13 @@
 .footer {
-    background-color: gray;
-    color: rgb(236, 83, 83);
+  /*position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;*/
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 90px;
+  padding: 10px 15px;
+  background-color: gray;
+  color: #f50057;
 }

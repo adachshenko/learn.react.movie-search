@@ -1,11 +1,10 @@
 import React from "react";
 import "./styles.scss";
 
-import Search from "./Search";
 import MovieList from "../../shared/components/MovieList";
 import MovieDetails from "../MovieDetailsPage/MovieDetails";
 
-class SearchPage extends React.Component {
+class MovieDetailsPage extends React.Component {
   state = {
     movieList: [
       {
@@ -70,43 +69,14 @@ class SearchPage extends React.Component {
     sortByValue: "vote_average",
   };
 
-  switchSearchParam = newSearchParam => () => {
-    this.setState({
-        searchByValue: newSearchParam
-    });
-  };
-
-  searchClickedHandler = () => {
-    console.log("Search");
-  };
-
-  inputHandler = (event) => {
-    this.setState({searchQuery: event.target.value});    
-  }
-
-  sortMovieList = sortByParam => () =>  {
-    this.setState({
-        sortByValue: sortByParam
-    });
-      console.log("Sort by", sortByParam );
-  }
-
-  render() {
+    render() {
     return (
-      <div className="search-page">
-        <Search
-          switchSearchParam={this.switchSearchParam}
-          searchClicked={this.searchClickedHandler}
-          changed={this.inputHandler}
-          sortByParam={this.sortMovieList}
-          searchByValue={this.state.searchByValue}
-          sortByValue={this.state.sortByValue}
-          number={this.state.movieList.length}
-        />
+      <React.Fragment>
+        <MovieDetails />
         <MovieList movieList={this.state.movieList} />
-      </div>
+      </React.Fragment>
     );
   }
 }
 
-export default SearchPage;
+export default MovieDetailsPage;

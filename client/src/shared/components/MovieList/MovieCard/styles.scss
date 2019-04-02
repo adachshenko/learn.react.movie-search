@@ -1,0 +1,30 @@
+.card {
+  width: 300px;
+  margin: 20px;
+  flex: 0 0 25%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0 5px;
+
+      .title {
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .year {
+        font-size: 10px;
+        padding: 2px 5px;
+        border: 1px solid gray;
+        border-radius: 3px;
+      }
+    }
+  }
+}

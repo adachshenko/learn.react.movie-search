@@ -1,0 +1,37 @@
+.movie-details-card {
+  display: flex;
+  padding: 30px 200px;
+  background-color: gray;
+
+  .content {
+    display: flex;  
+    flex-direction: column;
+    width: 50%;
+    padding-left: 70px;
+
+    .description {
+        display: flex; 
+        align-items: center;  
+    }
+
+    h1 {
+      color: #f50057;
+      margin-right: 20px;
+    }
+
+    .raiting {
+        padding: 3px;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+
+    .year{
+        margin-right: 20px;
+    }
+  }
+
+  .cover {
+    width: 30%;
+    height: 100%;
+  }
+}

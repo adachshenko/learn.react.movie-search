@@ -1,0 +1,30 @@
+.search {
+  padding: 30px 200px;
+  background-color: gray;
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .filter-buttons {
+      button {
+        margin: 0 10px;
+      }
+      .active {
+        color: white;
+        background-color: #f50057;
+      }
+    }
+  }
+}
+.sort {
+  padding: 10px 200px;
+  display: flex;
+  background-color: lightgrey;
+  align-items: center;
+  justify-content: space-between;
+  .active {
+    color: #f50057;
+  }
+}

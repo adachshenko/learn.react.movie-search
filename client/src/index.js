@@ -1,19 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import SearchPage from "./containers/SearchPage";
+
 import Footer from "./shared/components/Footer";
+import ErrorBoundary from "./shared/components/ErrorBoundary";
+import SearchPage from "./containers/SearchPage";
 import MovieDetailsPage from "./containers/MovieDetailsPage";
 
 import "styles.scss";
 
 const App = () => {
   return (
-    <React.Fragment>
-      {/* <SearchPage /> */}
-      <MovieDetailsPage />
+    <ErrorBoundary>
+      <SearchPage />
+      {/* <MovieDetailsPage /> */}
       <Footer />
-    </React.Fragment>
+    </ErrorBoundary>
   );
 };
 

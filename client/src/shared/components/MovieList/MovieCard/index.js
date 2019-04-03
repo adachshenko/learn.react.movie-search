@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./styles.scss";
 
 import Card from "@material-ui/core/Card";
@@ -7,8 +8,12 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
 const MovieCard = ({ image, title, year, genre, id }) => {
+  //throw new Error('I crashed!');
   return (
-    <Card className="card" onClick={() => console.log('go to the movie with id', id)}>
+    <Card
+      className="card"
+      onClick={() => console.log("go to the movie with id", id)}
+    >
       <CardActionArea>
         <CardMedia component="img" image={image} />
         <CardContent className="content">
@@ -21,6 +26,13 @@ const MovieCard = ({ image, title, year, genre, id }) => {
       </CardActionArea>
     </Card>
   );
+};
+
+MovieCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default MovieCard;

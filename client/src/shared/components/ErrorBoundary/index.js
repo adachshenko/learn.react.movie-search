@@ -1,14 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null, errorInfo: null, open: false };
-  }
+  state = { error: null, errorInfo: null, open: false };
 
   componentDidCatch(error, errorInfo) {
     this.setState({
@@ -19,7 +16,7 @@ class ErrorBoundary extends React.Component {
   }
 
   handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -29,25 +26,24 @@ class ErrorBoundary extends React.Component {
   };
 
   render() {
-    if (this.state.errorInfo) {
-      return (
-        <Snackbar
-          anchorOrigin={{
-            vertical: "top",
-            horizontal: "center"
-          }}
-          open={this.state.errorSnackOpened}
-          onClose={this.handleClose}
-          message="Something went wrong"
-          action={[
-            <IconButton key="close" color="inherit" onClick={this.handleClose}>
-              <CloseIcon />
-            </IconButton>
-          ]}
-        />
-      );
-    }
-    return this.props.children;
+    return this.state.errorInfo ? (
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'center'
+        }}
+        open={this.state.errorSnackOpened}
+        onClose={this.handleClose}
+        message='Something went wrong'
+        action={[
+          <IconButton key='close' color='inherit' onClick={this.handleClose}>
+            <CloseIcon />
+          </IconButton>
+        ]}
+      />
+    ) : (
+      this.props.children
+    );
   }
 }
 

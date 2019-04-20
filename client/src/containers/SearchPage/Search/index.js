@@ -1,8 +1,9 @@
-import React from "react";
-import "./styles.scss";
+import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import classNames from 'classnames';
+import './styles.scss';
 
 const Search = ({
   searchQuery,
@@ -16,49 +17,49 @@ const Search = ({
 }) => {
   return (
     <React.Fragment>
-      <div className="search">
+      <div className='search'>
         <TextField
-          label="FIND YOUR MOVIE"
+          label='FIND YOUR MOVIE'
           value={searchQuery}
           onChange={changed}
-          margin="normal"
+          margin='normal'
         />
-        <div className="button-container">
-          <div className="filter-buttons">
+        <div className='button-container'>
+          <div className='filter-buttons'>
             <label>SEARCH BY</label>
             <Button
-              variant="contained"
-              className={searchByValue === "title" ? "active" : ""}
-              onClick={switchSearchParam("title")}
+              variant='contained'
+              className={classNames({ active: searchByValue === 'title' })}
+              onClick={switchSearchParam('title')}
             >
               title
             </Button>
             <Button
-              variant="contained"
-              className={searchByValue === "genre" ? "active" : ""}
-              onClick={switchSearchParam("genre")}
+              variant='contained'
+              className={classNames({ active: searchByValue === 'genre' })}
+              onClick={switchSearchParam('genre')}
             >
               genre
             </Button>
           </div>
-          <Button variant="contained" color="secondary" onClick={searchClicked}>
+          <Button variant='contained' color='secondary' onClick={searchClicked}>
             search
           </Button>
         </div>
       </div>
-      <div className="sort">
+      <div className='sort'>
         <label>{number} movies found</label>
         <div>
           <label>Sort by</label>
           <Button
-            onClick={sortByParam("release_date")}
-            className={sortByValue === "release_date" ? "active" : ""}
+            onClick={sortByParam('release_date')}
+            className={classNames({ active: sortByValue === 'release_date' })}
           >
             release date
           </Button>
           <Button
-            onClick={sortByParam("vote_average")}
-            className={sortByValue === "vote_average" ? "active" : ""}
+            onClick={sortByParam('vote_average')}
+            className={sortByValue === 'vote_average' ? 'active' : ''}
           >
             rating
           </Button>

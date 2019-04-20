@@ -1,109 +1,51 @@
-import React from "react";
-import "./styles.scss";
+import React from 'react';
 
-import Search from "./Search";
-import MovieList from "../../shared/components/MovieList";
-import MovieDetails from "../MovieDetailsPage/MovieDetails";
+import MovieList from '../../shared/components/MovieList';
+import Search from './Search';
+import './styles.scss';
+import {movieList} from '../../mock-data.json';
 
 class SearchPage extends React.Component {
   state = {
-    movieList: [
-      {
-        id: "1",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2005"
-      },
-      {
-        id: "2",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      },
-      {
-        id: "3",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      },
-      {
-        id: "4",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      },
-      {
-        id: "5",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      },
-      {
-        id: "6",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      },
-      {
-        id: "7",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-YJySlwn9H389AOIAg0K8w2pRgJ1XW17csRyw0fmrjBGlvNPTWw",
-        title: "Pulp Fiction",
-        genre: "comedy",
-        year: "2006"
-      }
-    ],
-    searchByValue: "title",
+    movieList,
+    searchByValue: 'title',
     searchQuery: null,
-    sortByValue: "vote_average",
+    sortByValue: 'vote_average'
   };
 
   switchSearchParam = newSearchParam => () => {
     this.setState({
-        searchByValue: newSearchParam
+      searchByValue: newSearchParam
     });
   };
 
   searchClickedHandler = () => {
-    console.log("Search");
+    console.log('Search');
   };
 
-  inputHandler = (event) => {
-    this.setState({searchQuery: event.target.value});    
-  }
+  inputHandler = event => {
+    this.setState({ searchQuery: event.target.value });
+  };
 
-  sortMovieList = sortByParam => () =>  {
-    this.setState({
-        sortByValue: sortByParam
-    });
-      console.log("Sort by", sortByParam );
-  }
+  sortMovieList = sortByValue => () => {
+    this.setState({ sortByValue });
+    console.log('Sort by', sortByValue);
+  };
 
   render() {
+    const {searchByValue, sortByValue, movieList} = this.state;
     return (
-      <div className="search-page">
+      <div className='search-page'>
         <Search
           switchSearchParam={this.switchSearchParam}
           searchClicked={this.searchClickedHandler}
           changed={this.inputHandler}
           sortByParam={this.sortMovieList}
-          searchByValue={this.state.searchByValue}
-          sortByValue={this.state.sortByValue}
-          number={this.state.movieList.length}
+          searchByValue={searchByValue}
+          sortByValue={sortByValue}
+          number={movieList.length}
         />
-        <MovieList movieList={this.state.movieList} />
+        <MovieList movieList={movieList} />
       </div>
     );
   }

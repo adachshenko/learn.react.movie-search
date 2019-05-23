@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -67,6 +68,17 @@ const Search = ({
       </div>
     </React.Fragment>
   );
+};
+
+Search.propTypes = {
+  searchQuery: PropTypes.string,
+  sortByValue: PropTypes.string.isRequired,
+  searchByValue: PropTypes.string.isRequired,
+  sortByParam: PropTypes.func.isRequired,
+  changed: PropTypes.func.isRequired,
+  number: PropTypes.number.isRequired,
+  switchSearchParam: PropTypes.func.isRequired,
+  searchClicked: PropTypes.func.isRequired
 };
 
 export default Search;

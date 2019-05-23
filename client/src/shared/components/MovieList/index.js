@@ -6,7 +6,7 @@ import MovieCard from './MovieCard';
 const MovieList = ({ movieList = [] }) => (
   <div className='movie-list'>
     {movieList.map(movie => (
-      <MovieCard {...movie} key={movie.id} />
+      <MovieCard movie={movie} key={movie.id} />
     ))}
   </div>
 );

@@ -7,8 +7,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-const MovieCard = ({ image, title, year, genre, id }) => {
-  //throw new Error('I crashed!');
+const MovieCard = ({ movie }) => {
+  const { image, title, year, genre, id } = movie;
+  throw new Error('I crashed!');
   return (
     <Card
       className='card'
@@ -29,10 +30,12 @@ const MovieCard = ({ image, title, year, genre, id }) => {
 };
 
 MovieCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired
+  movie: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired
+  })
 };
 
 export default MovieCard;

@@ -11,8 +11,8 @@ import 'styles.scss';
 const App = () => {
   return (
     <ErrorBoundary>
-      {/* <SearchPage /> */}
-      <MovieDetailsPage />
+      <SearchPage />
+      {/* <MovieDetailsPage /> */}
       <Footer />
     </ErrorBoundary>
   );

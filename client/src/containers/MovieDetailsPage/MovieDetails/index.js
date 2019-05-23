@@ -7,15 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import './styles.scss';
 
-const MovieDetails = ({
-  image,
-  title,
-  year,
-  genre,
-  description,
-  duration,
-  rating
-}) => {
+const MovieDetails = ({ movie }) => {
+  const { image, title, year, genre, description, duration, rating } = movie;
   return (
     <React.Fragment>
       <Card className='movie-details-card'>
@@ -42,13 +35,15 @@ const MovieDetails = ({
 };
 
 MovieDetails.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  duration: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired
+  movie: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired
+  })
 };
 
 export default MovieDetails;

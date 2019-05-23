@@ -5,14 +5,13 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 class ErrorBoundary extends React.Component {
-  state = { error: null, errorInfo: null, open: false };
+  state = { error: null, errorSnackOpened: false };
 
-  componentDidCatch(error, errorInfo) {
-    this.setState({
+  static getDerivedStateFromError(error) {
+    return {
       error: error,
-      errorInfo: errorInfo,
       errorSnackOpened: true
-    });
+    };
   }
 
   handleClose = (event, reason) => {
@@ -26,7 +25,7 @@ class ErrorBoundary extends React.Component {
   };
 
   render() {
-    return this.state.errorInfo ? (
+    return this.state.error ? (
       <Snackbar
         anchorOrigin={{
           vertical: 'top',

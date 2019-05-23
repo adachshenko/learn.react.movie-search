@@ -10,7 +10,7 @@ class MovieDetailsPage extends React.Component {
   render() {
     return (
       <div className='movie-page'>
-        <MovieDetails {...this.state.movieList[0]} />
+        <MovieDetails movie={this.state.movieList[0]} />
         <MovieList movieList={this.state.movieList} />
       </div>
     );
